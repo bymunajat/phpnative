@@ -14,7 +14,7 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Data durasi inputan
+
     var durationData = {
         '1-5 Hari': 132,
         '6-10 Hari': 105,
@@ -24,10 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
         '26-30 Hari': 19
     };
 
-    // Labels untuk chart
     var labels = Object.keys(durationData);
 
-    // Data untuk chart
     var chartData = {
         labels: labels,
         datasets: [{
@@ -41,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }]
     };
 
-    // Options untuk chart
     var chartOptions = {
         scales: {
             yAxes: [{
@@ -60,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Inisialisasi chart
     var ctx = document.getElementById('attendanceChart').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'bar',

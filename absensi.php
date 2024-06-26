@@ -1,15 +1,12 @@
 <?php
 include 'config.php';
 
-// Inisialisasi variabel bulan dengan nilai default atau dari input pengguna
-$default_month = '2022-01'; // Nilai default bulan Januari 2022
+$default_month = '2022-01'; 
 $month = isset($_GET['month']) ? $_GET['month'] : $default_month;
 
-// Hitung tanggal awal dan akhir bulan berdasarkan bulan yang dipilih
 $start_date = date("Y-m-01", strtotime($month));
 $end_date = date("Y-m-t", strtotime($month));
 
-// Query untuk mengambil data absensi berdasarkan rentang tanggal
 $sql = "SELECT * FROM absensi WHERE tgl BETWEEN '$start_date' AND '$end_date'";
 $result = $conn->query($sql);
 ?>
@@ -113,7 +110,6 @@ $result = $conn->query($sql);
         }
         echo "</table>";
     } else {
-        // Tidak ada data yang ditemukan untuk bulan yang dipilih
         echo "<p>Tidak ada data untuk bulan $month.</p>";
     }
 
